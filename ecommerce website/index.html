@@ -1,0 +1,1706 @@
+a<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developerprady</title>
+</head>
+<style>
+  *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  list-style:none;
+  text-decoration:none;
+  transition:all .1s;
+  user-select:none;
+}
+
+
+/*--color shotcut--*/
+:root {
+  --black:#000;
+  --white:#fff;
+}
+
+
+body{
+  font-family: 'Roboto', sans-serif;
+  overflow-x:hidden;
+}
+
+
+header{
+  background:url('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2019/12/home-new-bg-free-img.jpg');
+  background-size:cover;
+  background-position:100%;
+  background-attachment: fixed;
+  width:100%;
+  height:100vh;
+  position:relative;
+}
+
+
+header:before{
+  content:"";
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:0;
+  background:rgba(0, 125, 196,.3);
+}
+
+
+header nav{
+  background:rgba(0, 52, 82,.15);
+  color:var(--white);
+  display:flex;
+  position:relative;
+  padding:25px 30px;
+}
+
+header nav .fa-bars,
+header nav .fa-remove{
+  display:none;
+}
+
+header nav img{
+  width:120px;
+}
+
+header nav ul{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  height:100%;
+  text-transform:uppercase;
+}
+
+header nav ul li{
+  cursor:pointer;
+}
+
+header nav ul li:hover{
+  color:#008ED1;
+}
+
+
+header nav ul:nth-child(2){
+  height:auto;
+  margin-left: 100px;
+}
+
+
+header nav ul:nth-child(3){
+  position:absolute;
+  top:0%;
+  right:30px;
+  font-weight:100;
+}
+
+
+header .content{
+  position:absolute;
+  top:50%;
+  left:100px;
+  transform:translate(0,-50%);
+  text-transform:capitalize;
+  color:#fff;
+  width:400px;
+}
+
+
+header .content  .heading{
+  font-size:3em;
+}
+
+
+header .content h4{
+  margin-top:20px;
+  font-weight:600;
+  font-size:1.3em;
+}
+
+header .content button{
+  border:1px solid var(--white);
+  outline:none;
+  padding:15px 25px;
+  margin-top:20px;
+  margin-right:20px;
+  text-transform:uppercase;
+  font-size:.90em;
+  background:none;
+  color:var(--white);
+  font-weight:100;
+  cursor:pointer;
+  transition:all .5s;
+}
+
+
+header .content .shopNow{
+  background:var(--white);
+  color:var(--black);
+}
+
+
+header .content .shopNow:hover{
+  background:var(--black);
+  color:var(--white);
+  border:1px solid #000;
+}
+
+
+header .content .findMore:hover{
+  background:var(--white);
+  color:#000;
+}
+
+
+/*--- section code----*/
+
+section .brands{
+  width: 100%;
+  margin:50px 0;
+  display:flex;
+  justify-content:center;
+}
+
+
+section .brands .carousel{
+  max-width: 1200px;
+  height:auto;
+  padding:0px 100px;
+  padding-left:130px;
+  position:relative;
+}
+
+section .brands .carousel .card{
+  color: var(--white);
+  text-align: center;
+  margin: 0px 0;
+  width:150px;
+}
+
+
+section .brands .carousel .card > img{
+  width:100px;
+  height:50px;
+  object-fit:contain;
+  padding:5px;
+}
+
+section .brands .carousel .owl-nav{
+  position:absolute;
+  top:35%;
+  left:0;
+  transform:translate(0,-50%);
+  padding:0  90px;
+  font-size:2em;
+  color:#aaa;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+}
+
+
+
+section .discount{
+  padding:0 100px;
+  display:grid;
+  grid-template-columns: auto auto auto;
+  gap:10px;
+  padding-bottom:100px;
+}
+
+
+section .discount .discount-box{
+  background:#eee;
+  color:var(--white);
+  height:450px;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  padding:30px 25px;
+  position:relative;
+}
+
+section .discount .discount-box:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.45);
+}
+
+section .discount .discount-box:nth-child(1){
+  background:url('https://leivip.com/cdn/shop/products/Wholesaledrawstringcroptopwithpuffsleevespink_1.jpg?v=1652446862');
+  background-size:cover;
+  background-position:center;
+}
+
+
+section .discount .discount-box:nth-child(2){
+  background:url('https://static.cilory.com/470794-thickbox_default/nologo-cotton-white-round-neck-tee.jpg');
+  background-size:cover;
+  background-position:center;
+}
+
+
+
+section .discount .discount-box:nth-child(3){
+  background:url('https://images.bewakoof.com/uploads/grid/app/types-of-shirts-for-men-bewakoof-blog-5-1610963789.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+
+section .discount .discount-box > h3,p,button{
+  position:relative;
+}
+
+section .discount .discount-box > h3{
+  font-size:1.3em;
+  text-transform:capitalize;
+}
+
+section .discount .discount-box > p{
+  font-size:.90em;
+  margin:15px 0;
+}
+
+section .discount .discount-box > button{
+  border:none;
+  outline:none;
+  width:120px;
+  text-transform:uppercase;
+  padding:10px 0px;
+  cursor:pointer;
+  font-weight:700;
+  background:var(--white);
+  color:var(--black);
+  transition:all .5s;
+}
+
+section .discount .discount-box > button:hover{
+  background:var(--black);
+  color:var(--white);
+}
+
+
+
+section .featured-Products{
+  background:#eee;
+  padding:100px 100px;
+  padding-top:200px;
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  gap:10px;
+  position:relative;
+}
+
+
+section .featured-Products h2{
+  position:absolute;
+  top:80px;
+  left:50%;
+  transform:translate(-50%,0);
+  font-size:2.5em;
+  padding:10px 0;
+}
+
+
+section .featured-Products h2:after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:-2px;
+  transform:translate(-50%,0);
+  width:100px;
+  height:1px;
+  background:#0093E7;
+}
+
+
+section .featured-Products .product{
+  height:350px;
+  position:relative;
+}
+
+section .featured-Products .product .fa-shopping-basket{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:var(--white);
+  padding:10px;
+  border-radius:50%;
+  box-shadow:0 0 10px #ccc;
+  color:#888;
+  opacity:0;
+} 
+
+section .featured-Products .product img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  cursor:pointer;
+}
+
+
+section .featured-Products .product:hover .fa-shopping-basket{
+  opacity:1;
+}
+
+
+section .featured-Products .product .sale{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:var(--white);
+  padding:5px 10px;
+  border-radius:20px;
+  box-shadow:0 0 7px #aaa;
+}
+
+
+section .featured-Products .product .product-content{
+  line-height:22px;
+}
+
+section .featured-Products .product .product-content .name{
+  text-transform:capitalize;
+  font-weight:700;
+}
+
+section .featured-Products .product .product-content .category{
+  text-transform:capitalize;
+  color:#aaa;
+  font-weight:100;
+}
+
+section .featured-Products .product .product-content .price span{
+  text-decoration:line-through;
+  color:#999;
+}
+
+
+section .featured-Products .product .product-content .stars{
+  font-size:.75em;
+}
+
+section .featured-Products .product .product-content .colors-option{
+  margin-top:10px;
+}
+
+section .featured-Products .product .product-content .colors-option span{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  display:inline-block;
+  background:orange;
+  cursor:pointer;
+}
+
+section .featured-Products .product .product-content .colors-option span:hover{
+  border:2px solid var(--black);
+}
+
+
+section .featured-Products .product .product-content .colors-option span.sheoActive,.braceletActive,.bagActive{
+  border:2px solid var(--black);
+}
+
+
+section .featured-Products .product .product-content .colors-option span:nth-child(1){
+  background:#0183CD;
+}
+
+section .featured-Products .product .product-content .colors-option span:nth-child(2){
+  background:#31C202;
+}
+
+section .featured-Products .product .product-content .colors-option span:nth-child(3){
+  background:#C104AD;
+}
+
+
+
+section .limited-Offer{
+  background:#eee;
+  padding:0px 100px;
+  padding-bottom:100px;
+}
+
+
+section .limited-Offer .offer-content{
+  background:url('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2019/12/banner-03.jpg');
+  background-size:fill;
+  background-position:70%;
+  background-attachment: fixed;
+  height:400px;
+  position:relative;
+}
+
+section .limited-Offer .offer-content .content-box{
+  color:var(--white);
+  width:500px;
+  position:absolute;
+  left:50px;
+  top:50%;
+  transform:translate(0,-50%);
+}
+
+
+section .limited-Offer .offer-content:before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 125, 196,.3);
+}
+
+
+
+
+section .limited-Offer .offer-content .content-box .offer{
+  font-size:.95em;
+  margin:10px 0;
+}
+
+
+section .limited-Offer .offer-content .content-box h3{
+  font-size:2.4em;
+  margin-bottom:10px;
+}
+
+
+section .limited-Offer .offer-content .content-box .content{
+  font-size:.85em;
+}
+
+
+section .limited-Offer .offer-content .content-box button{
+  border:none;
+  outline:none;
+  padding:10px 20px;
+  text-transform:uppercase;
+  margin-top:25px;
+  font-weight:700;
+  font-size:1.1em;
+  background:var(--white);
+  cursor:pointer;
+  transition:all .3s;
+}
+
+
+section .limited-Offer .offer-content .content-box button:hover{
+  background:var(--black);
+  color:var(--white);
+}
+
+
+section .info{
+  background:#eee;
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  gap:10px;
+  padding:0px 100px;
+  padding-bottom:100px;
+}
+
+
+section .info .info-section{
+  text-align:center;
+  line-height:26px;
+}
+
+
+section .info .info-section img{
+  width:50px;
+  height:50px;
+  object-fit:contain;
+}
+
+
+section .info .info-section p{
+  color:#333;
+  font-size:.95em;
+}
+
+
+/*--- footer ----- */
+footer{
+  background:var(--black);
+}
+
+
+footer .offer-info{
+  padding:50px 100px;
+  font-size:1.3em;
+  font-weight:700;
+  cursor:pointer;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+
+
+footer .footer-info{
+  background:var(--white);
+  display:grid;
+  grid-template-columns: 35% auto auto auto;
+  gap:20px;
+  padding:50px 100px;
+  border-bottom:1px solid #ccc;
+}
+
+
+footer .footer-info .container img{
+  width:80px;
+}
+
+footer .footer-info .container h2{
+  font-size:1.2em;
+  margin-top:15px;
+}
+
+footer .footer-info .container h5{
+  font-size:1.2em;
+  font-weight:100;
+}
+
+footer .footer-info .container ul{
+  margin-top:15px;
+}
+
+footer .footer-info .container ul li{
+  color:#666;
+  padding:5px 0;
+  cursor:pointer;
+}
+
+footer .footer-info .container ul li:hover{
+  color:#008ED1; 
+}
+
+
+footer .footer-info .container form .name{
+  border:1px solid #ccc;
+  outline:none;
+  padding:10px;
+  width:100%;
+  margin-top:20px;
+  
+}
+
+footer .footer-info .container form .name:focus{
+  border:1px solid #000;
+}
+
+
+footer .footer-info .container form .submit{
+  border:none;
+  outline:none;
+  background:#008ED1;
+  color:var(--white);
+  padding:12px 25px;
+  margin-top:10px;
+  text-transform:uppercase;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .5s;
+}
+
+footer .footer-info .container form .submit:hover{
+  background:var(--black);
+}
+
+
+footer .footer-copyright{
+  display:flex;
+  justify-content:space-between;
+  padding:30px 100px;
+}
+
+footer .footer-copyright .copyright{
+  font-size:.95em;
+}
+
+
+footer .footer-copyright .social{
+  display:flex;
+  gap:20px;
+}
+
+footer .footer-copyright .social .fa{
+  cursor:pointer;
+  font-size:1.2em;
+}
+
+
+footer .footer-copyright .social .fa:hover{
+  color:#008ED1;
+}
+
+
+/*---- media queary min--750px & max--999px ----*/
+
+@media (min-width: 750px) and (max-width:999px) {
+  
+  
+  header nav ul:nth-child(2){
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    height:100%;
+  }
+  
+  header nav ul:nth-child(3){
+    background:rgba(0, 52, 82,.15);
+    color:var(--white);
+    display:block;
+    right:0;
+    top:92px;
+    Width:200px;
+    height:0px;
+    overflow:hidden;
+    text-align:center;
+    transition:all .5s;
+  }
+  
+  
+  header nav ul:nth-child(3) li{
+    margin:5px 0;
+  }
+  
+  header nav ul:nth-child(3) li:nth-child(1){
+    margin-top:30px;
+  }
+  
+  header nav ul:nth-child(3) li:nth-child(5){
+    margin-bottom:30px;
+  }
+  
+  header nav .fa-bars,
+  header nav .fa-remove{
+    display:block;
+    position:absolute;
+    right:80px;
+    top:50%;
+    transform:translate(0,-50%);
+    font-size:2em;
+    cursor:pointer;
+  }
+  
+  header nav .fa-bars:hover,
+  header nav .fa-remove:hover{
+    color:#008ED1;
+  }
+  
+  
+  header .content{
+    left:50px;
+  }
+  
+  
+  section .brands .carousel{
+  padding:0px 50px;
+  padding-left:60px;
+  }
+  
+  section .brands .carousel .owl-nav{
+  padding:0  50px;
+ }
+  
+  
+  section .discount{
+    padding:0 50px;
+    padding-bottom:100px;    
+  }
+  
+  section .discount .discount-box{
+  height:350px;
+    padding:30px 15px;
+  }
+  
+  
+  section .discount .discount-box h3{
+    font-size:1em;
+  }
+  
+  section .featured-Products{
+  padding:100px 50px;
+  padding-top:200px;
+  grid-template-columns: auto auto auto;
+ }
+  
+  
+  section .limited-Offer{
+  padding:0px 50px;
+  padding-bottom:100px;
+  }
+  
+  section .info{
+  grid-template-columns: auto auto ;
+  padding:0px 50px;
+  padding-bottom:100px;
+  }
+  
+  
+  
+  footer .offer-info{
+  padding:50px 50px;
+  }
+
+
+  footer .footer-info{
+  gap:10px;
+  padding:50px 50px;
+  }
+  
+  footer .footer-copyright{
+  padding:30px 50px;
+  }
+  
+}
+
+
+/*---- media queary min--600px & max--749px ----*/
+
+@media (min-width: 600px) and (max-width:749px) {
+  
+  
+  header{
+    background-position:center;
+  }
+  
+  
+  header nav ul:nth-child(2){
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    height:100%;
+    font-size:.95em;
+  }
+  
+  header nav ul:nth-child(3){
+    background:rgba(0, 52, 82,.15);
+    color:var(--white);
+    display:block;
+    right:0;
+    top:92px;
+    Width:200px;
+    height:0px;
+    overflow:hidden;
+    text-align:center;
+    transition:all .5s;
+  }
+  
+  
+  header nav ul:nth-child(3) li{
+    margin:5px 0;
+  }
+  
+  header nav ul:nth-child(3) li:nth-child(1){
+    margin-top:30px;
+  }
+  
+  header nav ul:nth-child(3) li:nth-child(5){
+    margin-bottom:30px;
+  }
+  
+  header nav .fa-bars,
+  header nav .fa-remove{
+    display:block;
+    position:absolute;
+    right:50px;
+    top:50%;
+    transform:translate(0,-50%);
+    font-size:2em;
+    cursor:pointer;
+  }
+  
+  header nav .fa-bars:hover,
+  header nav .fa-remove:hover{
+    color:#008ED1;
+  }
+  
+  
+  header .content{
+    left:50px;
+  }
+  
+  
+  section .brands .carousel{
+  padding:0px 50px;
+  padding-left:60px;
+  }
+  
+  section .brands .carousel .owl-nav{
+  padding:0  50px;
+ }
+  
+  
+  section .discount{
+    padding:0 50px;
+    padding-bottom:100px;
+    grid-template-columns: auto auto ;
+  }
+  
+  section .discount .discount-box{
+  height:350px;
+    padding:30px 15px;
+  }
+  
+  
+  section .discount .discount-box h3{
+    font-size:1em;
+  }
+  
+  section .featured-Products{
+  padding:100px 50px;
+  padding-top:200px;
+  grid-template-columns: auto auto;
+ }
+  
+  section .featured-Products h2{
+    font-size:2.2em;
+  }
+  
+  
+  section .limited-Offer{
+  padding:0px 50px;
+  padding-bottom:100px;
+  }
+  
+  
+  section .limited-Offer .offer-content .content-box{
+    left:30px;
+    width:85%;
+  }
+  
+  section .info{
+  grid-template-columns: auto auto ;
+  padding:0px 50px;
+  padding-bottom:100px;
+  }
+  
+  
+  
+  footer .offer-info{
+  padding:50px 50px;
+  }
+
+
+  footer .footer-info{
+  gap:30px;
+  padding:50px 50px;
+  grid-template-columns: auto auto;
+  }
+  
+  footer .footer-copyright{
+  padding:30px 50px;
+    font-size:.90em;
+  }
+}
+
+
+
+/*---- media queary min--0px & max--599px ----*/
+
+@media (min-width: 0px) and (max-width:599px) {
+  
+  
+  header{
+    background-position:center;
+  }
+  
+  header nav ul:nth-child(2){
+    background:rgba(0, 52, 82,.15);
+    color:var(--white);
+    display:block;
+    Width:auto;
+    height:auto;
+    text-align:left;
+    padding:30px 30px;
+    transition:all .5s;
+    position:absolute;
+    left:-162px;
+    top:92px;
+  }
+  
+  header nav ul:nth-child(2):after{
+    content:"\27A7";
+    position:absolute;
+    top:10px;
+    right:-15px;
+    font-size:2em;
+    cursor:pointer;
+  }
+  
+  header nav ul:nth-child(2):after:hover{
+    color:#008ED1;
+  }
+  
+  header nav ul:nth-child(3){
+    background:rgba(0, 52, 82,.15);
+    color:var(--white);
+    display:block;
+    right:0;
+    top:92px;
+    Width:200px;
+    height:0px;
+    overflow:hidden;
+    text-align:center;
+    transition:all .5s;
+  }
+  
+  
+  header nav ul:nth-child(3) li{
+    margin:5px 0;
+  }
+  
+  header nav ul:nth-child(3) li:nth-child(1){
+    margin-top:30px;
+  }
+  
+  header nav ul:nth-child(3) li:nth-child(5){
+    margin-bottom:30px;
+  }
+  
+  header nav .fa-bars,
+  header nav .fa-remove{
+    display:block;
+    position:absolute;
+    right:50px;
+    top:50%;
+    transform:translate(0,-50%);
+    font-size:2em;
+    cursor:pointer;
+  }
+  
+  header nav .fa-bars:hover,
+  header nav .fa-remove:hover{
+    color:#008ED1;
+  }
+  
+  
+  header .content{
+    left:0px;
+    width:100%;
+    padding:0 30px;
+  }
+  
+  header .content .heading{
+    font-size:2.1em;
+  }
+  
+  header .content h4{
+    font-size:1.1em;
+  }
+  
+  header .content button{
+    font-size:.80em;
+  }
+  
+  section .brands .carousel{
+  padding:0px 15px;
+  padding-left:15px;
+  }
+  
+  section .brands .carousel .owl-nav{
+  padding:0  10px;
+ }
+  
+  
+  section .discount{
+    padding:0 10px;
+    padding-bottom:100px;
+    grid-template-columns: auto;
+  }
+  
+  section .discount .discount-box{
+    height:480px;
+    padding:30px 15px;
+  }
+  
+  
+  section .discount .discount-box h3{
+    font-size:1.4em;
+  }
+  
+  section .featured-Products{
+  padding:100px 10px;
+  padding-top:200px;
+  grid-template-columns: auto auto;
+ }
+  
+  section .featured-Products .product img{
+    height:150px;
+  }
+  
+  section .featured-Products h2{
+    font-size:1.2em;
+    text-align:center;
+  }
+  
+  
+  section .limited-Offer{
+  padding:0px 10px;
+  padding-bottom:100px;
+  }
+  
+  
+  section .limited-Offer .offer-content .content-box{
+    left:20px;
+    width:85%;
+  }
+  
+  section .info{
+  grid-template-columns: auto;
+  padding:0px 10px;
+  padding-bottom:100px;
+  }
+  
+  
+  
+  footer .offer-info{
+  padding:50px 10px;
+    font-size:1em;
+  }
+
+
+  footer .footer-info{
+  gap:30px;
+  padding:50px 10px;
+  grid-template-columns: auto;
+  }
+  
+  footer .footer-copyright{
+    padding:30px 10px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:.80em;
+    gap:10px;
+  }
+  
+}
+</style>
+<body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<!--- google fonts Link ---->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!---- icon cdn link---->
+
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<!--- owl carsoul ---->
+
+    
+
+<!----ecommerce ------>
+
+
+<header>
+  
+  <nav>
+    
+    <h1>LOGO</h1>
+    
+    <ul class="menu-bar-side">
+      <li>everything</li>
+      <li>women</li>
+      <li>men</li>
+      <li>accessories</li>
+    </ul>
+    
+     <ul class="menu-bar">
+      <li>about</li>
+      <li>contect us</li>
+      <li>&#36;0.00</li>
+      <li><i class='fas fa-shopping-cart'></i></li>
+      <li><i class='fas fa-user-alt'></i></li>
+    </ul>
+    
+    <i class="fa fa-bars"></i>
+  </nav>
+
+  
+ <div class="content">
+   
+  <h2 class="heading">
+    Raining Offers For Hot Summer!
+  </h2>
+  
+  <h4>
+    25% Off On All Products
+  </h4>
+  
+  <button class="shopNow">
+    shop now
+  </button>
+  <button class="findMore">
+    find more
+  </button>
+  
+</div>
+
+</header>
+<!--- end header --->
+
+
+<section>
+  
+ <div class="brands">
+  <div class="carousel owl-carousel">
+    <div class="card card-1">
+        <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/client-logo-5.png">
+    </div>
+    <div class="card card-2">
+        <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/client-logo-2.png">
+    </div>
+    <div class="card card-3">
+        <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/client-logo-3.png">
+    </div>
+    <div class="card card-4">
+        <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/client-logo-4.png">
+    </div>
+    <div class="card card-5">
+        <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/client-logo-5.png">
+    </div>
+    <div class="card card-6">
+        <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/client-logo-5.png">
+    </div>
+   </div>
+ </div>
+ <!--- brands logo ---->
+  
+  
+ <div class="discount">
+    <div class="discount-box">
+      <h3>20% Off On Tank Tops</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.</P>
+    <button>shop now</button>
+    </div>
+  
+   <div class="discount-box">
+      <h3>Latest Eyewear For You</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.​</P>
+    <button>shop now</button>
+    </div>
+
+    <div class="discount-box">
+      <h3>Let's Lorem Suit Up!</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.</P>
+    <button>check out</button>
+    </div>
+
+  </div>
+ <!---discount ----->
+
+
+<div class="featured-Products">
+  
+  <h2>Featured Products</h2>
+  
+  <div class="product">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe3-400x400.jpg" class="product-photo">
+    
+    <i class="fa fa-shopping-basket basket"></i>
+    
+    <p class="sale">Sale!</p>
+    
+    <div class="product-content">
+      <p class="name">
+        LoGO Yellow Shoes
+      </p>
+      <p class="category">
+        Men
+      </p>
+      <p class="price">
+        <span>&#36;150.00</span>
+        &#36;120.00
+      </p>
+      <p class="stars">
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </p>
+     </div>
+   </div>
+  <div class="product">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe1-400x400.jpg" id="sheochange">
+    
+    <i class="fa fa-shopping-basket basket"></i>
+    
+    <div class="product-content">
+      <p class="name">
+        LoGO Blue Shoes
+      </p>
+      <p class="category">
+        Men
+      </p>
+      <p class="price">
+        &#36;200.00
+      </p>
+      <div class="colors-option">
+        <span class="sheos sheoActive" onclick="sheoColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe1-400x400.jpg','0')"></span>
+        <span class="sheos" onclick="sheoColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/sports-shoe4-300x300.jpg','1')"></span>
+        <span class="sheos" onclick="sheoColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg','2')"></span>
+      </div>
+      <p class="stars">
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </p>
+     </div>
+   </div>
+  <div class="product">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans1-400x400.jpg">
+    
+   <i class="fa fa-shopping-basket basket"></i>
+    
+    <div class="product-content">
+      <p class="name">
+        Dark Brown Jeans
+      </p>
+      <p class="category">
+        Men
+      </p>
+      <p class="price">
+        &#36;150.00
+      </p>
+      <p class="stars">
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </p>
+     </div>
+   </div>
+  <div class="product">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans2-400x400.jpg">
+    
+   <i class="fa fa-shopping-basket basket"></i>
+    
+    <div class="product-content">
+      <p class="name">
+        Blue Denim Jeans
+      </p>
+      <p class="category">
+        Women
+      </p>
+      <p class="price">
+        &#36;150.00
+      </p>
+      <p class="stars">
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </p>
+     </div>
+   </div>
+  <div class="product">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans1-400x400.jpg" class="product-photo">
+    
+    <i class="fa fa-shopping-basket basket"></i>
+    
+    <p class="sale">Sale!</p>
+    
+    <div class="product-content">
+      <p class="name">
+        Blue Denim Shorts
+      </p>
+      <p class="category">
+        Women
+      </p>
+      <p class="price">
+        <span>&#36;150.00</span>
+        &#36;130.00
+      </p>
+      <p class="stars">
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </p>
+     </div>
+   </div>
+  <div class="product">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory1-300x300.jpg" id="bracelet">
+    
+    <i class="fa fa-shopping-basket basket"></i>
+    
+    <div class="product-content">
+      <p class="name">
+        Boho Bangle Bracelet
+      </p>
+      <p class="category">
+        Accessories
+      </p>
+      <p class="price">
+        &#36;150.00
+      </p>
+      <div class="colors-option">
+        <span class="bracelets braceletActive"  style="background:#03C2DC;" onclick="braceletColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory1-300x300.jpg','0')"></span>
+        <span class="bracelets" onclick="braceletColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-accessory1-c-300x300.jpg','1')"></span>
+        <span class="bracelets" style="background:#DC5C03;" onclick="braceletColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-accessory1-b-300x300.jpg','2')"></span>
+      </div>
+      <p class="stars">
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </p>
+     </div>
+   </div>
+  <div class="product">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-bag3-c-300x300.jpg" id="bag">
+    
+    <i class="fa fa-shopping-basket basket"></i>
+    
+    <div class="product-content">
+      <p class="name">
+        Bright Red Bag
+      </p>
+      <p class="category">
+        Accessories
+      </p>
+      <p class="price">
+        &#36;100.00 – &#36;140.00
+      </p>
+      <div class="colors-option">
+        <span class="bag bagActive" onclick="bagColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-bag3-c-300x300.jpg','0')"></span>
+        <span class="bag" style="background:#DC5C03;" onclick="bagColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-bag3-d-300x300.jpg','1')"></span>
+        <span class="bag" style="background:#D103BE;" onclick="bagColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-bag3-b-300x300.jpg','2')"></span>
+        <span class="bag" style="background:#D11C03;" onclick="bagColorChange('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag3-300x300.jpg','3')"></span>
+      </div>
+      <p class="stars">
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </p>
+     </div>
+   </div>
+  <div class="product">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag1-400x400.jpg">
+    
+   <i class="fa fa-shopping-basket basket"></i>
+    
+    <div class="product-content">
+      <p class="name">
+        Light Brown Purse
+      </p>
+      <p class="category">
+        Accessories
+      </p>
+      <p class="price">
+        &#36;150.00
+      </p>
+      <p class="stars">
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+      </p>
+     </div>
+ </div>
+ 
+</div>
+<!---featured products ----->
+
+
+<div class="limited-Offer">
+  <div class="offer-content">
+    <div class="content-box">
+    <p class="offer">
+      Limited Time Offer
+    </p>
+    <h3>
+      Special Edition
+    </h3>
+    <p class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+    </p>
+    <p class="offer">
+      Buy This T-shirt At 20% Discount, Use Code OFF20
+    </p>
+    <button>shop now</button>
+  </div>
+ </div>
+</div>
+<!---- limited offer---->
+
+
+<div class="info">
+  
+<div class="info-section">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/globe-free-img.png">
+    
+    <h3>Worldwide Shipping</h3>
+    <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    
+  </div>
+<div class="info-section">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/quality-free-img.png">
+    
+    <h3>Best Quality</h3>
+    <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    
+  </div>
+<div class="info-section">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/tag-free-img.png">
+    
+    <h3>Best Offers</h3>
+    <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    
+  </div>
+<div class="info-section">
+    <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/lock-free-img.png">
+    
+    <h3>Secure Payments</h3>
+    <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    
+  </div>
+  
+</div>
+<!---- info ---->
+  
+</section>
+
+
+<footer>
+  
+  <div class="offer-info">
+    SALE UP TO 70% OFF FOR ALL CLOTHES & FASHION ITEMS, ON ALL BRANDS.
+  </div>
+  <!--- offer-info ---->
+  
+  
+  <div class="footer-info">
+    
+    <div class="container">
+      <h1>LOGO</h1>
+      
+      <h2>The best look anytime, anywhere.</h2>
+    </div>
+    <div class="container">
+  
+      <h5>For Her</h5>
+      <ul>
+        <li>Women Jeans</li>
+        <li>Tops and Shirts</li>
+        <li>Women Jackets</li>
+        <li>Heels and Flats</li>
+        <li>Women Accessories</li>
+      </ul>
+    </div>
+    <div class="container">
+  
+      <h5>For Him</h5>
+      <ul>
+        <li>Men Jeans</li>
+        <li>Men Shirts</li>
+        <li>Men Shoes</li>
+        <li>Men Accessories</li>
+        <li>Men Jackets</li>
+      </ul>
+    </div>
+    <div class="container">
+  
+      <h5>Subscribe</h5>
+      
+      <form>
+        <input type="text" placeholder="Your email address..." class="name">
+        <input type="submit" class="submit" value="Subscribe">
+      </form>
+    </div>
+    
+  </div>
+    <!--- footer-info ---->
+  
+  <div class="footer-copyright">
+    
+    <div class="copyright">
+      Copyright © 2023 Brandstore. Developed By Developergtm
+    </div>
+    
+    <div class="social">
+      <i class="fa fa-facebook-f"></i>
+      <i class="fa fa-youtube-play"></i>
+      <i class="fa fa-twitter"></i>
+      <i class="fa fa-instagram"></i>
+      <i class="fa fa-google"></i>
+    </div>
+    
+  </div>
+  <!--- footer-copyright ---->
+  
+</footer>
+</body>
+<script>
+  
+//window risize
+window.onresize = function(){ 
+  location.reload(); 
+}
+
+//owl carousel
+$(".carousel").owlCarousel({
+           margin: 0,
+           loop: true,
+           autoplay: true,
+           autoplayTimeout: 1000,
+           autoplayHoverPause: true,
+           responsive: {
+             0:{
+               items:3,
+               nav: true
+             },
+             600:{
+               items:4,
+               nav: true
+             },
+             700:{
+               items:5,
+               nav: true
+             },
+             1000:{
+               items:5,
+               nav: true
+             }
+           }
+         });
+
+
+
+//sheo color change
+let sheo = document.querySelector('#sheochange');
+
+//active
+const sheos = document.querySelectorAll(".sheos");
+
+
+function sheoColorChange(img,num){
+  sheo.src = img;
+  
+  var current = document.getElementsByClassName('sheoActive');
+    
+   current[0].className = current[0].className.replace(" sheoActive","");
+    
+   sheos[num].className += " sheoActive";
+
+}
+
+
+
+
+
+//bracelet color change
+let bracelet = document.querySelector('#bracelet');
+
+//active
+const bracelets = document.querySelectorAll(".bracelets");
+
+
+function braceletColorChange(img,index){
+  bracelet.src = img;
+  
+    var braceletActive = document.getElementsByClassName('braceletActive');
+    
+   braceletActive[0].className = braceletActive[0].className.replace("braceletActive","");
+    
+   bracelets[index].className += " braceletActive";
+  
+}
+
+
+//bag color change
+let bag = document.querySelector('#bag');
+
+//active
+const bags = document.querySelectorAll(".bag");
+
+function bagColorChange(img,index){
+  bag.src = img;
+  
+      var bagActive = document.getElementsByClassName('bagActive');
+    
+   bagActive[0].className = bagActive[0].className.replace("bagActive","");
+    
+   bags[index].className += " bagActive";
+  
+}
+
+
+
+//menu bar
+
+let menu = document.querySelector('.fa-bars');
+let menubar = document.querySelector('.menu-bar');
+let a = true;
+menu.addEventListener("click",()=>{
+  
+  if(a == true){
+    menubar.style.height = "180px";
+    menu.classList.replace("fa-bars", "fa-remove");
+    a = false;
+  }else{
+    menubar.style.height = "0px";
+    menu.classList.replace("fa-remove", "fa-bars");
+    a = true;
+  }
+  
+});
+
+//side menu bar
+let menubarside = document.querySelector('.menu-bar-side');
+let b = true;
+menubarside.addEventListener("click",()=>{
+  
+  if(b == true){
+    menubarside.style.left = "0%";
+    b = false;
+  }else{
+    menubarside.style.left = "-162px";
+    b = true;
+  }
+  
+});
+</script>
+</html>

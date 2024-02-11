@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(
+    #ddd 0,
+    #ddd 2px,
+    #f1f1f1 2px,
+    #f1f1f1 20pxa
+  );
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+:root {
+  --clr-primary: #37b;
+  --clr-good: #5d5;
+  --clr-bad: #d55;
+}
+.quiz-container {
+  background: white;
+  box-shadow: 0.1em 0.1em 0.5em #0005;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 10rem;
+  width: 25rem;
+  position: relative;
+  padding-bottom: 4em;
+  padding-top: 0em;
+  padding-left: 2em;
+  padding-top: 2em;
+}
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: show 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@keyframes show {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.start-button {
+  background-color: var(--clr-primary);
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+  padding: 0.1rem 1.3rem;
+  font-size: 1.6rem;
+  font-family: Arial;
+  cursor: pointer;
+  font-weight: 500;
+}
+.question {
+  text-align: center;
+  font-family: Arial;
+  font-weight: 700;
+  color: #252525;
+  padding-bottom: 0.6rem;
+  font-size: 2rem;
+}
+.answer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 15rem;
+}
+.answer {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: Arial;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.3rem 0;
+  cursor: pointer;
+  color: #222;
+  transition: color 0.2s ease-out, background 0.1s ease-out 1s;
+  line-height: 100%;
+  border-radius: 0.3rem;
+  z-index: 1;
+}
+.answer.good {
+  background: var(--clr-good);
+  color: white !important;
+}
+.answer.bad {
+  background: var(--clr-bad);
+  color: white !important;
+}
+.answer:hover {
+  color: var(--clr-primary);
+}
+.indicator::before,
+.indicator::after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px)) scaleX(0.03);
+  background: var(--clr-primary);
+  width: calc(var(--width) * 1px);
+  border-radius: 0.3rem;
+  height: calc(var(--height) * 1px);
+  transition: transform 0.4s ease-in-out, background 0.5s ease-in-out 0.4s;
+  pointer-events: none;
+}
+.indicator::after {
+  transform-origin: right;
+}
+.indicator.good::before,
+.indicator.good::after {
+  transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px)) scaleX(0.6);
+  background: var(--clr-good);
+}
+.indicator.bad::before,
+.indicator.bad::after {
+  transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px)) scaleX(0.6);
+  background: var(--clr-bad);
+}
+.indicator.hidden {
+  transition: none;
+  opacity: 0;
+}
+.page.hidden {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+.next-button {
+  z-index: 2;
+  position: absolute;
+  animation: showBtn 0.3s ease-out;
+  background-color: var(--clr-primary);
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+  padding: 0.1rem 1.3rem;
+  font-size: 1.3rem;
+  font-family: Arial;
+  cursor: pointer;
+  font-weight: 500;
+  bottom: 0.7em;
+  right: 1.2em;
+  box-shadow: 0.1rem 0.1rem 1rem var(--clr-primary);
+}
+@keyframes showBtn {
+  from {
+    transform: translate(5em, -20%) rotate(-15deg);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.score {
+  font-family: Arial;
+  color: #222;
+  font-size: 1em;
+  font-weight: 500;
+  padding-top: 2em;
+}
+
+</style>
+<body>
+  <section class="quiz-container">
+    <div class="page">
+      <h4 class="question">Quiz</h4>
+      <div class="answer-container"></div>
+      <button class="start-button">start</button>
+    </div>
+    <span class="indicator hidden"></span>
+  </section>
+  <script>
+    const quiz = [
+  {
+    question: "Question 1",
+    answers: ["answer1", "answer2", "answer3", "answer4"],
+    goodAnswer: 0
+  },
+  {
+    question: "Question 2",
+    answers: ["answer1", "answer2", "answer3", "answer4"],
+    goodAnswer: 1
+  }
+];
+let questionIndex = -1;
+const startBtn = document.querySelector(".start-button");
+const quizContainer = document.querySelector(".quiz-container");
+const indicator = document.querySelector(".indicator");
+let answered = false;
+let goodAnswers = 0;
+let isIndicatorSetuped = false;
+let isIndicatorActive = false;
+
+startBtn.addEventListener("click", () => {
+  hiddenPage();
+  nextQuestion();
+});
+function hiddenPage() {
+  isIndicatorActive = false;
+  indicator.classList.add("hidden");
+  const page = document.querySelector(".page");
+  page.classList.add("hidden");
+  setTimeout(() => page.remove(), 500);
+}
+
+function nextQuestion() {
+  questionIndex++;
+  if (questionIndex === quiz.length) {
+    showFinalPage();
+    return;
+  }
+  const page = document.createElement("div");
+  page.className = "page";
+  quizContainer.appendChild(page);
+  const questionContainer = document.createElement("h4");
+  questionContainer.className = "question";
+  page.appendChild(questionContainer);
+  const answerContainer = document.createElement("div");
+  answerContainer.className = "answer-container";
+  page.appendChild(answerContainer);
+  answered = false;
+  questionContainer.textContent = quiz[questionIndex].question;
+  quiz[questionIndex].answers.forEach((answer, index) => {
+    const element = document.createElement("button");
+    element.className = "answer";
+    element.textContent = answer;
+    element.addEventListener("click", () => {
+      if (answered) return;
+      if (index == quiz[questionIndex].goodAnswer) {
+        element.classList.add("good");
+        indicator.classList.add("good");
+        goodAnswers++;
+      } else {
+        element.classList.add("bad");
+        indicator.classList.add("bad");
+      }
+      answered = true;
+      setTimeout(() => {
+        showNextBtn(page);
+      }, 1100);
+    });
+    indicator.className = "indicator hidden";
+    answerContainer.appendChild(element);
+    indicator.style.setProperty("--height", element.clientHeight);
+    setTimeout(() => {
+      isIndicatorActive = true;
+    }, 500);
+    element.addEventListener("mousemove", () => {
+      if (answered) return;
+      if (!isIndicatorActive || !isIndicatorSetuped) return;
+      indicator.className = "indicator";
+      const clientRect = element.getBoundingClientRect();
+      indicator.style.setProperty("--y", clientRect.y);
+      indicator.style.setProperty("--x", clientRect.x);
+    });
+  });
+  const button = document.querySelector(".answer");
+  const clientRect = button.getBoundingClientRect();
+  indicator.style.setProperty("--y", clientRect.y - clientRect.height * 2);
+  console.log(clientRect.y);
+  setTimeout(() => {
+    if (isIndicatorSetuped) return;
+    const button = document.querySelector(".answer");
+    const clientRect = button.getBoundingClientRect();
+    indicator.style.setProperty("--x", clientRect.x);
+    indicator.style.setProperty("--width", clientRect.width);
+    setTimeout(() => {
+      isIndicatorSetuped = true;
+    }, 400);
+  }, 500);
+}
+function showNextBtn(page) {
+  const element = document.createElement("button");
+  element.className = "next-button";
+  element.addEventListener("click", () => {
+    hiddenPage();
+    nextQuestion();
+  });
+  element.textContent = "next";
+  page.appendChild(element);
+}
+function showFinalPage() {
+  const page = document.createElement("div");
+  page.className = "page";
+  page.innerHTML = `
+    <h1 class="question">
+    Congratulations 🎉!!!
+    </h1>
+    <p class="score">
+      You score is ${goodAnswers}/${quiz.length}
+    </p>
+  `;
+  quizContainer.appendChild(page);
+}
+
+  </script>
+</body>
+</html>
